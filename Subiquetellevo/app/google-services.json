@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "759045974863",
+    "project_id": "alta-usuario-edaec",
+    "storage_bucket": "alta-usuario-edaec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759045974863:android:366105774281e23581333a",
+        "android_client_info": {
+          "package_name": "com.example.subiquetellevo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759045974863-f8n72s2pbntfs7pnvjrqk30sdel6gaim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDiYoAaDKcloKWwNFqucIO7QQQVkCEH94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759045974863-f8n72s2pbntfs7pnvjrqk30sdel6gaim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
