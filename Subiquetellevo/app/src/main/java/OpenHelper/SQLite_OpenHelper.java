@@ -58,7 +58,7 @@ public class SQLite_OpenHelper extends SQLiteOpenHelper {
     //METODO PARA VALIDAR USUARIO EXISTENTE
     public Cursor consultarUsuarioContrasenia(String usuario, String contraseña) throws SQLiteException {
         Cursor mcursor=null;
-        mcursor=this.getReadableDatabase().query(Utilidades.TABLA_PERSONA,new String[]{Utilidades.CAMPO_ID,Utilidades.CAMPO_NOMBRE,"Correo","Contraseña"},"Correo like '"+usuario+"' and Contraseña like '"+contraseña+"'",null,null,null,null);
+        mcursor=this.getReadableDatabase().query(Utilidades.TABLA_PERSONA,new String[]{Utilidades.CAMPO_ID,Utilidades.CAMPO_NOMBRE,Utilidades.CAMPO_CORREO,Utilidades.CAMPO_CONTRASENIA},"Correo like '"+usuario+"' and Contrasenia like '"+contraseña+"'",null,null,null,null);
         return mcursor;
     }
 

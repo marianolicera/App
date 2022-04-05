@@ -15,7 +15,7 @@ import OpenHelper.SQLite_OpenHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextView tvRegistro;
+    Button tvRegistro;
     Button btnIngresar;
     SQLite_OpenHelper helper=new SQLite_OpenHelper(this,"BD1",null,1);
 
@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        tvRegistro=(TextView) findViewById(R.id.registerButton);
+        tvRegistro=(Button) findViewById(R.id.registerButton);
 
 
         tvRegistro.setOnClickListener(new View.OnClickListener() {

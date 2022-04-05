@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnGrabarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (txtContraseñaUsuario == txtContraseña2) {
+                //if (txtContraseñaUsuario == txtContraseña2) {
                     helper.abrir();
                     helper.insertarRegistroPersona(String.valueOf(txtNombreUsuario.getText()),String.valueOf(txtCorreoUsuario.getText()),String.valueOf(txtContraseñaUsuario.getText()));
                     helper.cerrar();
@@ -55,26 +55,11 @@ public class RegisterActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(),LoginActivity.class);
 
                     startActivity(i);
-                }else{
-                    Toast.makeText(RegisterActivity.this, "Las claves no coinciden", Toast.LENGTH_SHORT).show();
-                }
+                //}else{
+                    //Toast.makeText(RegisterActivity.this, "Las claves no coinciden", Toast.LENGTH_SHORT).show();
+                //}
             }
         });
 
     }
-
-    /*private void crearDatos(){
-        Map<String, Object> map = new HashMap<>();
-        map.put("Nombre",txtNombreUsuario.getText().toString());
-        map.put("Apellido",txtApellidoUsuario.getText().toString());
-        map.put("DNI",txtDniUsuario.getText().toString());
-        map.put("CUIL",txtCuilUsuario.getText().toString());
-        map.put("Correo Electrónico",txtCorreoUsuario.getText().toString());
-        map.put("Contraseña",txtContraseñaUsuario.getText().toString());
-
-        mFirestore.collection("Usuarios").document().set(map);
-    }*/
-
-
-
 }
