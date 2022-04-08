@@ -36,45 +36,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
+    <!--<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">-->
+
+    <!--</RadioGroup>-->
     <TextView
         android:id="@+id/txtSubTitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="monospace"
         android:text="Preferencias"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_ios" />
-<!--<RadioGroup
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">-->
-    <RadioButton
-        android:id="@+id/radio_android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="onRadioButtonClicked"
-        android:text="Android"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup" />
 
-    <RadioButton
-        android:id="@+id/radio_ios"
+    <RadioGroup
+        android:id="@+id/radiogroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="onRadioButtonClicked"
-        android:text="iOS"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtSubTitle2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_android" />
-<!--</RadioGroup>-->
+        app:layout_constraintTop_toBottomOf="@+id/txtSubTitle">
+
+        <RadioButton
+            android:id="@+id/radio_android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Android" />
+
+        <RadioButton
+            android:id="@+id/radio_ios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="iOS" />
+    </RadioGroup>
+
     <CheckBox
         android:id="@+id/checkbox_programacion"
         android:layout_width="wrap_content"
@@ -109,6 +117,18 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkbox_juegos" />
+
+    <CheckBox
+        android:id="@+id/checkbox_otros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Otros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_redes" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
