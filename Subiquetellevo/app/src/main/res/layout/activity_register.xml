@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtRegistroNombre" />
 
     <EditText
-        android:id="@+id/txtRegistroContraseña"
+        android:id="@+id/txtRegistroContrasenia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtRegistroEmail" />
 
     <EditText
-        android:id="@+id/txtRegistroContraseña2"
+        android:id="@+id/txtRegistroContrasenia2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRegistroContraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRegistroContrasenia" />
 
     <Button
         android:id="@+id/button"
@@ -83,6 +83,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRegistroContraseña2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRegistroContrasenia2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

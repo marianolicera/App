@@ -2,29 +2,23 @@ package com.example.subiquetellevo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.regex.Pattern;
 
 import OpenHelper.SQLite_OpenHelper;
 
 public class RegisterActivity extends AppCompatActivity {
 
     Button btnGrabarUsuario;
-    EditText txtNombreUsuario,txtCorreoUsuario, txtContraseñaUsuario,txtContraseña2;
+    EditText txtNombreUsuario,txtCorreoUsuario, txtContraseniaUsuario,txtContrasenia2;
 
     //FirebaseFirestore mFirestore;
 
@@ -37,29 +31,42 @@ public class RegisterActivity extends AppCompatActivity {
         btnGrabarUsuario=(Button)findViewById(R.id.button);
         txtNombreUsuario=(EditText)findViewById(R.id.txtRegistroNombre);
         txtCorreoUsuario=(EditText) findViewById(R.id.txtRegistroEmail);
-        txtContraseñaUsuario=(EditText) findViewById(R.id.txtRegistroContraseña);
-        txtContraseña2=(EditText) findViewById(R.id.txtRegistroContraseña2);
+        txtContraseniaUsuario=(EditText) findViewById(R.id.txtRegistroContrasenia);
+        txtContrasenia2=(EditText) findViewById(R.id.txtRegistroContrasenia2);
         //Firestore=FirebaseFirestore.getInstance();
 
         btnGrabarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if (txtContraseñaUsuario == txtContraseña2) {
-                    helper.abrir();
-                    helper.insertarRegistroPersona(String.valueOf(txtNombreUsuario.getText()),String.valueOf(txtCorreoUsuario.getText()),String.valueOf(txtContraseñaUsuario.getText()));
-                    helper.cerrar();
+                String v_contraseniaUsu = txtContraseniaUsuario.getText().toString();
+                String v_contraseniaUsu2 = txtContrasenia2.getText().toString();
+                if (isValidEmailId(txtCorreoUsuario.getText().toString())){
+                    if (v_contraseniaUsu.equals(v_contraseniaUsu2)) {
+                        helper.abrir();
+                        helper.insertarRegistroPersona(String.valueOf(txtNombreUsuario.getText()), String.valueOf(txtCorreoUsuario.getText()), String.valueOf(txtContraseniaUsuario.getText()));
+                        helper.cerrar();
+                        Toast.makeText(RegisterActivity.this, "Registro exitoso!", Toast.LENGTH_SHORT).show();
 
-                    //crearDatos();
-                    Toast.makeText(RegisterActivity.this, "Registro exitoso!", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
 
-                    Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-
-                    startActivity(i);
-                //}else{
-                    //Toast.makeText(RegisterActivity.this, "Las claves no coinciden", Toast.LENGTH_SHORT).show();
-                //}
+                        startActivity(i);
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "Las claves no coinciden", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(RegisterActivity.this, "Ingrese un email válido", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
     }
+        private boolean isValidEmailId(String email){
+
+            return Pattern.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                    + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                    + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                    + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                    + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                    + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$").matcher(email).matches();
+        }
 }
