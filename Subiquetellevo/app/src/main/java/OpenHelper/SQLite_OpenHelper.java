@@ -43,7 +43,7 @@ public class SQLite_OpenHelper extends SQLiteOpenHelper {
         this.close();
     }
 
-    //METODO PARA INSERTAR REGISTROS EN TABLA PERSONA
+    //METODO PARA INSERTAR REGISTROS EN TABLA PERSONA.
 
     public void insertarRegistroPersona(String nombre, String correo, String contrasenia){
         ContentValues valores = new ContentValues();
